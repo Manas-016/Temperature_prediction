@@ -1,0 +1,24 @@
+artifact_path: file:D:/Classes Homework/manas computer/Datacamp/Project-Predict temp
+  in London/mlruns/0/models/m-96162a288f664cb7963908432d18d423/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.6
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-96162a288f664cb7963908432d18d423
+model_size_bytes: 120778
+model_uuid: m-96162a288f664cb7963908432d18d423
+prompts: null
+run_id: 41c26cd9e0e64c45b5142352b8659fa3
+utc_time_created: '2026-08-14 12:03:31.457498'
