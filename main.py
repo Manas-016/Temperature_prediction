@@ -4,7 +4,6 @@ import mlflow
 import mlflow.sklearn
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
@@ -32,11 +31,18 @@ feature_sel = ['month', 'cloud_cover', 'sunshine', 'precipitation', 'pressure', 
 target_var = 'mean_temp'
 weather_df = weather_df.dropna(subset=['mean_temp'])
 
+weather_df = weather_df.sort_values("date").reset_index(drop=True)
 
 X = weather_df[feature_sel]
 y = weather_df[target_var]
 
-X_train , X_test ,y_train , y_test = train_test_split(X , y , test_size=0.2 , random_state= 40)
+split_index = int(len(weather_df) * 0.8)
+
+X_train = X.iloc[:split_index]
+X_test = X.iloc[split_index:]
+
+y_train = y.iloc[:split_index]
+y_test = y.iloc[split_index:]
 
 imputer = SimpleImputer(strategy="mean")
 X_train = imputer.fit_transform(X_train)
