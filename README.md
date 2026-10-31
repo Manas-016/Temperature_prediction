@@ -55,7 +55,7 @@ Missing Value Handling
       ↓
 Feature Selection
       ↓
-Train-Test Split
+Chronological splitting
       ↓
 Feature Scaling
       ↓
